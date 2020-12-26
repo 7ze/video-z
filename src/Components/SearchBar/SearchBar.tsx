@@ -2,26 +2,28 @@ import * as React from 'react';
 import './SearchBar.sass';
 
 type State = {
-  term: string;
+  searchTerm: string;
 };
 
 type Props = {
-  // onSubmit: () => void;
+  onSubmit: (term: string) => void;
 };
 
 export class SearchBar extends React.Component<Props, State> {
   state: State = {
-    term: '',
+    searchTerm: '',
   };
 
   onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({
-      term: event.target.value,
+      searchTerm: event.target.value,
     });
   };
 
   onFormSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    const { onSubmit } = this.props;
+    onSubmit(this.state.searchTerm);
   };
 
   render() {
@@ -34,7 +36,7 @@ export class SearchBar extends React.Component<Props, State> {
               type="text"
               placeholder="Search"
               onChange={this.onInputChange}
-              value={this.state.term}
+              value={this.state.searchTerm}
             />
             <i className="search icon"></i>
           </div>
