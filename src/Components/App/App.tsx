@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './App.sass';
 import { SearchBar } from '../SearchBar';
+import { VideoList } from '../VideoList';
 import { getVideos } from '../../api';
 
 type State = {
@@ -25,6 +26,7 @@ export class App extends React.Component<Props, State> {
       <div className="app">
         <div className="ui container">
           <SearchBar onSubmit={this.onFormSubmit} />
+          <VideoList videos={this.state.videos} />
         </div>
       </div>
     );
