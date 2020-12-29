@@ -19,7 +19,7 @@ export const getVideos = async (url: string, searchTerm: string) => {
   let response: Response['response'], error: Response['error'];
   try {
     response = await youtube.get(url, {
-      params: { query: searchTerm },
+      params: { q: searchTerm },
     });
   } catch (e) {
     error = e.toJSON();
