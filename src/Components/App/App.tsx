@@ -1,22 +1,23 @@
 import * as React from 'react';
 import './App.sass';
 import { SearchBar } from '../SearchBar';
-import { youtube } from '../../api';
+import { getVideos } from '../../api';
 
-type State = {};
+type State = {
+  videos: any[];
+};
 
 type Props = {};
 
 export class App extends React.Component<Props, State> {
+  state: State = {
+    videos: [],
+  };
+
   onFormSubmit = async (searchTerm: string) => {
-    try {
-      const response = await youtube.get('/search', {
-        params: { q: searchTerm },
-      });
-      console.log(response);
-    } catch (e) {
-      console.log(e.toJSON());
-    }
+    const { videos, error } = await getVideos('/search', searchTerm);
+    if (error) console.debug(error.toJSON());
+    else this.setState({ videos });
   };
 
   render() {
