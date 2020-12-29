@@ -17,7 +17,7 @@ export class App extends React.Component<Props, State> {
 
   onFormSubmit = async (searchTerm: string) => {
     const { videos, error } = await getVideos('/search', searchTerm);
-    if (error) console.debug(error.toJSON());
+    if (error) console.debug(error);
     else this.setState({ videos });
   };
 
