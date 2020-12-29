@@ -6,7 +6,7 @@ export const VideoItem: React.FC<Props> = ({ video }: Props) => {
   return (
     <div className="video-item">
       <p>{video.snippet.title}</p>
-      <img src={thumbnails.medium.url} alt="" />
+      <img src={thumbnails.medium.url} alt={video.snippet.description} />
     </div>
   );
 };
