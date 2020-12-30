@@ -1,5 +1,16 @@
 div.search-bar.ui.segment
-  padding: 1.5rem 0 2.5rem 0 
+  padding: 1.5rem 0 2.5rem 0
+
+  input
+    background: hsl(0, 0%, 18%)
+    color: hsl(0, 0%, 80%)!important
+
+    &:focus
+      border: 1px solid hsla(0, 0%, 39%, 0.4)
+      background: hsl(0, 0%, 20%)
+
+    &::placeholder
+      color: hsla(0, 0%, 80%, .3)!important
 
   label
     color: hsl(0, 0%, 80%)
@@ -8,7 +19,7 @@ div.search-bar.ui.segment
 .search.icon
   position: absolute
   right: 20px
-  top: 33px
+  top: 42px
   opacity: 0.3
   cursor: text
 
