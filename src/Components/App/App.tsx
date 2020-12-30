@@ -4,6 +4,7 @@ import { Video } from '../VideoInterface';
 import { SearchBar } from '../SearchBar';
 import { VideoList } from '../VideoList';
 import { getVideos } from '../../api';
+import { VideoPlayer } from '../VideoPlayer';
 
 type State = {
   videos: Video[];
@@ -33,6 +34,7 @@ export class App extends React.Component<Props, State> {
       <div className="app">
         <div className="ui container">
           <SearchBar onSearchTermSubmit={this.onSearchTermSubmit} />
+          <VideoPlayer video={this.state.selectedVideo} />
           <VideoList
             videos={this.state.videos}
             onVideoSelect={this.onVideoSelect}
