@@ -6,7 +6,7 @@ type State = {
 };
 
 type Props = {
-  onSubmit: (term: string) => void;
+  onSearchTermSubmit: (term: string) => void;
 };
 
 export class SearchBar extends React.Component<Props, State> {
@@ -22,8 +22,8 @@ export class SearchBar extends React.Component<Props, State> {
 
   onFormSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    const { onSubmit } = this.props;
-    onSubmit(this.state.searchTerm);
+    const { onSearchTermSubmit } = this.props;
+    onSearchTermSubmit(this.state.searchTerm);
   };
 
   render() {

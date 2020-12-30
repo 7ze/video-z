@@ -18,21 +18,22 @@ export class App extends React.Component<Props, State> {
     selectedVideo: null,
   };
 
-  onFormSubmit = async (searchTerm: string) => {
+  onSearchTermSubmit = async (searchTerm: string) => {
     const { videos, error } = await getVideos('/search', searchTerm);
     if (error) console.debug(error);
     else this.setState({ videos });
   };
 
   onVideoSelect = (video: Video) => {
-    console.log(video);
+    this.setState({ selectedVideo: video });
+    console.log(this.state.selectedVideo);
   };
 
   render() {
     return (
       <div className="app">
         <div className="ui container">
-          <SearchBar onSubmit={this.onFormSubmit} />
+          <SearchBar onSearchTermSubmit={this.onSearchTermSubmit} />
           <VideoList
             videos={this.state.videos}
             onVideoSelect={this.onVideoSelect}

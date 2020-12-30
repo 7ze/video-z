@@ -16,7 +16,7 @@ export const VideoList: React.FC<Props> = ({
     <VideoItem
       key={video.id.videoId}
       video={video}
-      onVideoSelect={() => onVideoSelect(video)}
+      onVideoSelect={onVideoSelect}
     />
   ));
   return <div className="video-list ui relaxed divided list">{list}</div>;
