@@ -12,7 +12,13 @@ export const VideoPlayer: React.FC<Props> = ({ video }) => {
     return (
       <div className="video-player">
         <div className="ui embed">
-          {<iframe title="video-player" src={videoSrc}></iframe>}
+          {
+            <iframe
+              title="video-player"
+              allowFullScreen={true}
+              src={videoSrc}
+            ></iframe>
+          }
         </div>
         <div className="ui segment">
           <h4 className="header">{video.snippet.title}</h4>
