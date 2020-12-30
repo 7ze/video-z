@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './App.sass';
-import { Video } from '../Video';
+import { Video } from '../VideoInterface';
 import { SearchBar } from '../SearchBar';
 import { VideoList } from '../VideoList';
 import { getVideos } from '../../api';

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './VideoList.sass';
 import { VideoItem } from '../VideoItem';
-import { Video } from '../Video';
+import { Video } from '../VideoInterface';
 
 type Props = {
   videos: Video[];
