@@ -42,7 +42,7 @@ export class App extends React.Component<Props, State> {
       <div className="app">
         <div className="ui container">
           <SearchBar onSearchTermSubmit={this.onSearchTermSubmit} />
-          <div className="ui grid">
+          <div className="ui stackable grid">
             <div className="ui row">
               <div className="eleven wide column">
                 <VideoPlayer video={this.state.selectedVideo} />
