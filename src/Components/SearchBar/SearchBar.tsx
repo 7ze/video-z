@@ -28,19 +28,21 @@ export class SearchBar extends React.Component<Props, State> {
 
   render() {
     return (
-      <div className="search-bar ui segment">
-        <form className="ui form" onSubmit={this.onFormSubmit}>
-          <div className="field">
-            <label htmlFor="Search Videos">Search Videos</label>
-            <input
-              type="text"
-              placeholder="Search"
-              onChange={this.onInputChange}
-              value={this.state.searchTerm}
-            />
-            <i className="search icon"></i>
-          </div>
-        </form>
+      <div className="search-bar ui inverted segment">
+        <div className="ui container">
+          <form className="ui form" onSubmit={this.onFormSubmit}>
+            <div className="field">
+              <label htmlFor="Search Videos">Search Videos</label>
+              <input
+                type="text"
+                placeholder="Search"
+                onChange={this.onInputChange}
+                value={this.state.searchTerm}
+              />
+              <i className="search icon"></i>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

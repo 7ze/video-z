@@ -20,7 +20,7 @@ export const VideoPlayer: React.FC<Props> = ({ video }) => {
             ></iframe>
           }
         </div>
-        <div className="ui segment">
+        <div className="video-description ui segment">
           <h4 className="header">{video.snippet.title}</h4>
           <p>{video?.snippet.description}</p>
         </div>
