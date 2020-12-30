@@ -9,5 +9,5 @@ export const VideoList: React.FC<Props> = ({ videos }: Props) => {
   const list = videos.map((video) => (
     <VideoItem key={video.id.videoId} video={video} />
   ));
-  return <div>{list}</div>;
+  return <div className="video-list ui relaxed divided list">{list}</div>;
 };
