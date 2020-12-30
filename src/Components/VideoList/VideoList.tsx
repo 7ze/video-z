@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { VideoItem } from '../VideoItem';
+import { Video } from '../Video';
 
 type Props = {
-  videos: any[];
+  videos: Video[];
 };
 
 export const VideoList: React.FC<Props> = ({ videos }: Props) => {
