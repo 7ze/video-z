@@ -5,6 +5,7 @@ import { SearchBar } from '../SearchBar';
 import { VideoList } from '../VideoList';
 import { getVideos } from '../../api';
 import { VideoPlayer } from '../VideoPlayer';
+import { Footer } from '../Footer';
 
 type State = {
   videos: Video[];
@@ -56,6 +57,7 @@ export class App extends React.Component<Props, State> {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }
