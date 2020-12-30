@@ -24,9 +24,8 @@ export class App extends React.Component<Props, State> {
     else this.setState({ videos });
   };
 
-  onVideoSelect = (video: Video) => {
-    this.setState({ selectedVideo: video });
-    console.log(this.state.selectedVideo);
+  onVideoSelect = (selectedVideo: Video) => {
+    this.setState({ selectedVideo });
   };
 
   render() {
