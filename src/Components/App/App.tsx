@@ -41,8 +41,8 @@ export class App extends React.Component<Props, State> {
   render() {
     return (
       <div className="app">
+        <SearchBar onSearchTermSubmit={this.onSearchTermSubmit} />
         <div className="ui container">
-          <SearchBar onSearchTermSubmit={this.onSearchTermSubmit} />
           <div className="ui stackable grid">
             <div className="ui row">
               <div className="eleven wide column">
