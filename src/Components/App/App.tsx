@@ -33,7 +33,10 @@ export class App extends React.Component<Props, State> {
       <div className="app">
         <div className="ui container">
           <SearchBar onSubmit={this.onFormSubmit} />
-          <VideoList videos={this.state.videos} />
+          <VideoList
+            videos={this.state.videos}
+            onVideoSelect={this.onVideoSelect}
+          />
         </div>
       </div>
     );

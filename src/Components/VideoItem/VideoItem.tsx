@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Props } from './Props.interface';
 import './VideoItem.sass';
+import { Props } from './Props.interface';
 
-export const VideoItem: React.FC<Props> = ({ video }: Props) => {
+export const VideoItem: React.FC<Props> = ({ video, onVideoSelect }: Props) => {
   const thumbnails = video.snippet.thumbnails;
   return (
     <div className="video-item item">
@@ -10,9 +10,12 @@ export const VideoItem: React.FC<Props> = ({ video }: Props) => {
         className="ui small image"
         src={thumbnails.medium.url}
         alt={video.snippet.description}
+        onClick={() => onVideoSelect(video)}
       />
       <div className="content">
-        <div className="header">{video.snippet.title}</div>
+        <div className="header" onClick={() => onVideoSelect(video)}>
+          {video.snippet.title}
+        </div>
       </div>
     </div>
   );
