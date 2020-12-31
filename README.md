@@ -11,7 +11,7 @@
 
 - `git clone https://github.com/The-sad-philosopher/VideoZ.git`  
 - `npm install` or `yarn`  
-- Create a `.env` file and paste your  `API Key`  in the format shown below
+- Create a `.env` file and paste your  `Youtube DataV3 API Key`  in the format shown below
 
   ```javascript
     REACT_APP_YOUTUBE_API_KEY=<your_api_key>
