@@ -2,31 +2,20 @@ import * as React from 'react';
 import { Video } from '../VideoInterface';
 import { Searchbar } from '../Searchbar';
 import { VideoList } from '../VideoList';
-import { getVideos } from '../../api';
 import { VideoPlayer } from '../VideoPlayer';
 import { Footer } from '../Footer';
+import { useVideos } from '../../hooks/useVideos';
 import './App.sass';
 
 export const App: React.FC = () => {
-  const [videos, setVideos] = React.useState<Video[]>([]);
   const [selectedVideo, setSelectedVideo] = React.useState<Video | null>(null);
+  const [videos, search] = useVideos('Christmas London 4k');
 
-  React.useEffect(() => {
-    (async () => onSearchTermSubmit('Christmas London 4k'))();
-  }, []);
-
-  const onSearchTermSubmit = async (searchTerm: string) => {
-    const { videos, error } = await getVideos('/search', searchTerm);
-    if (error) console.debug(error);
-    else {
-      setVideos(videos);
-      setSelectedVideo(videos[0]);
-    }
-  };
+  React.useEffect(() => setSelectedVideo(videos[0]), [videos]);
 
   return (
     <div className="app">
-      <Searchbar onSearchTermSubmit={onSearchTermSubmit} />
+      <Searchbar onSearchTermSubmit={search} />
       <div className="ui container">
         <div className="ui stackable grid">
           <div className="ui row">
