@@ -24,9 +24,6 @@ export const App: React.FC = () => {
     }
   };
 
-  const onVideoSelect = (selectedVideo: Video) =>
-    setSelectedVideo(selectedVideo);
-
   return (
     <div className="app">
       <Searchbar onSearchTermSubmit={onSearchTermSubmit} />
@@ -37,7 +34,7 @@ export const App: React.FC = () => {
               <VideoPlayer video={selectedVideo} />
             </div>
             <div className="five wide column">
-              <VideoList videos={videos} onVideoSelect={onVideoSelect} />
+              <VideoList videos={videos} onVideoSelect={setSelectedVideo} />
             </div>
           </div>
         </div>
