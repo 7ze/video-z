@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './App.sass';
 import { Video } from '../VideoInterface';
-import { SearchBar } from '../SearchBar';
+import { Searchbar } from '../Searchbar';
 import { VideoList } from '../VideoList';
 import { getVideos } from '../../api';
 import { VideoPlayer } from '../VideoPlayer';
@@ -41,7 +41,7 @@ export class App extends React.Component<Props, State> {
   render() {
     return (
       <div className="app">
-        <SearchBar onSearchTermSubmit={this.onSearchTermSubmit} />
+        <Searchbar onSearchTermSubmit={this.onSearchTermSubmit} />
         <div className="ui container">
           <div className="ui stackable grid">
             <div className="ui row">
